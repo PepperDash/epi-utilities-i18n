@@ -1,18 +1,18 @@
 ﻿using PepperDash.Essentials.Core;
 
-namespace EssentialsPluginTemplateEPI
+namespace PepperDash.Utilities
 {
-	public class EssentialsPluginBridgeJoinMapTemplate : JoinMapBaseAdvanced
+	public class I18NUtilityJoinMap : JoinMapBaseAdvanced
 	{
 	    public JoinDataComplete DeviceName = new JoinDataComplete(new JoinData {JoinNumber = 1, JoinSpan = 1},
 	        new JoinMetadata
 	        {
-	            Label = "Device Name",
+	            Description = "Device Name",
 	            JoinCapabilities = eJoinCapabilities.ToSIMPL,
 	            JoinType = eJoinType.Serial
 	        });
 
-		public EssentialsPluginBridgeJoinMapTemplate(uint joinStart) 
+		public I18NUtilityJoinMap(uint joinStart) 
             :base(joinStart)
 		{
 		}

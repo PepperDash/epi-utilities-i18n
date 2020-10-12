@@ -6,14 +6,15 @@ using Crestron.SimplSharp;
 
 using PepperDash.Core;
 using PepperDash.Essentials.Core;
+using PepperDash.Essentials.Core.Config;
 
 using Newtonsoft.Json;
 
-namespace EssentialsPluginTemplateEPI
+namespace PepperDash.Utilities
 {
-    public class EssentialsPluginFactoryTemplate : EssentialsPluginDeviceFactory<EssentialsPluginDeviceTemplate>
+    public class I18NUtilityFactory : EssentialsPluginDeviceFactory<I18NUtility>
     {
-        public EssentialsPluginFactoryTemplate()
+        public I18NUtilityFactory()
         {
             // Set the minimum Essentials Framework Version
             MinimumEssentialsFrameworkVersion = "1.5.5";
@@ -22,13 +23,13 @@ namespace EssentialsPluginTemplateEPI
             TypeNames = new List<string>() { "examplePluginDevice" };
         }
 
-        // Builds and returns an instance of EssentialsPluginDeviceTemplate
-        public override EssentialsDevice BuildDevice(PepperDash.Essentials.Core.Config.DeviceConfig dc)
+        // Builds and returns an instance of I18nUtility
+        public override EssentialsDevice BuildDevice(DeviceConfig dc)
         {
             Debug.Console(1, "Factory Attempting to create new device from type: {0}", dc.Type);
 
-            var propertiesConfig = dc.Properties.ToObject<EssentialsPluginConfigObjectTemplate>();
-            return new EssentialsPluginDeviceTemplate(dc.Key, dc.Name, propertiesConfig);
+            var propertiesConfig = dc.Properties.ToObject<I18NUtilityConfiguration>();
+            return new I18NUtility(dc.Key, dc.Name, propertiesConfig);
         }
 
     }
