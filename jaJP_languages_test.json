@@ -1,0 +1,27 @@
+{
+  "ja-JP": {
+    "localeName": "ja-JP",
+    "friendlyName": "Japanese",
+    "enable": true,
+    "uiLabels": [
+      {
+        "key": "activity01",
+        "description": "Activity 1",
+        "displayText": "シェア",
+        "joinNumber": 1
+      },
+      {
+        "key": "activity02",
+        "description": "Activity 2",
+        "displayText": "音声通話",
+        "joinNumber": 2
+      },
+      {
+        "key": "activity03",
+        "description": "Activity 3",
+        "displayText": "ビデオ通話",
+        "joinNumber": 3
+      }
+    ]
+  }
+}
