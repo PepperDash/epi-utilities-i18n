@@ -1,0 +1,27 @@
+{
+  "es-MX": {
+    "localeName": "es-MX",
+    "friendlyName": "Spanish - Mexico",
+    "enable": true,
+    "uiLabels": [
+      {
+        "key": "activity01",
+        "description": "Activity 1",
+        "displayText": "Compartir",
+        "joinNumber": 1
+      },
+      {
+        "key": "activity02",
+        "description": "Activity 2",
+        "displayText": "Llamada de audio",
+        "joinNumber": 2
+      },
+      {
+        "key": "activity03",
+        "description": "Activity 3",
+        "displayText": "Llamada de video",
+        "joinNumber": 3
+      }
+    ]
+  }
+}
