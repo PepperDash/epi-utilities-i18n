@@ -25,6 +25,9 @@ namespace PepperDash.Utilities
         public bool Enable { get; set; }
         public List<LanguageLabel> UiLabels { get; set; }
         public List<LanguageLabel> Sources { get; set; }
-        public List<LanguageLabel> Destinations { get; set; } 
+        public List<LanguageLabel> Destinations { get; set; }
+        public List<LanguageLabel> SourceGroupNames { get; set; }
+        public List<LanguageLabel> DestinationGroupNames { get; set; }
+        public List<LanguageLabel> RoomNames { get; set; }
     }
 }
