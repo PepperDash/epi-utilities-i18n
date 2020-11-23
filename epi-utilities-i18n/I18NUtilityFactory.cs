@@ -13,7 +13,7 @@ namespace PepperDash.Utilities
             MinimumEssentialsFrameworkVersion = "1.6.4";
 
             // In the constructor we initialize the list with the typenames that will build an instance of this device
-            TypeNames = new List<string>() { "languageutility", "i18nutility" };
+            TypeNames = new List<string> { "languageutility", "i18nutility" };
         }
 
         // Builds and returns an instance of I18nUtility
