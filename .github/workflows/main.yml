@@ -9,8 +9,8 @@ on:
 env:
   # solution path doesn't need slashes unless there it is multiple folders deep
   # solution name does not include extension. .sln is assumed
-  SOLUTION_PATH: PDT.EssentialsPluginTemplate.EPI\
-  SOLUTION_FILE: PDT.EssentialsPluginTemplate.EPI
+  SOLUTION_PATH: epi-utilities-i18n\
+  SOLUTION_FILE: epi-utilities-i18n
   # Do not edit this, we're just creating it here
   VERSION: 0.0.0-buildtype-buildnumber
   # Defaults to debug for build type
@@ -26,7 +26,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-          submodules: true
           token: ${{ secrets.PLUGIN_ACTION_TOKEN }}
       # Generate the appropriate version number
       - name: Set Version Number
