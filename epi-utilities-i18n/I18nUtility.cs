@@ -6,7 +6,6 @@ using Crestron.SimplSharpPro;
 using Crestron.SimplSharpPro.DeviceSupport;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Serialization;
 using PepperDash.Core;
 using PepperDash.Essentials.Core;
 using PepperDash.Essentials.Core.Bridges;
@@ -39,7 +38,7 @@ namespace PepperDash.Utilities
 
             AddPreActivationAction(() =>
             {
-                var fileNames = FindLanguagesConfigurationFile();
+                var fileNames = FindLanguagesConfigurationFiles();
 
                 if (fileNames == null)
                 {
@@ -89,7 +88,7 @@ namespace PepperDash.Utilities
             }
         }
 
-        private IEnumerable<string> FindLanguagesConfigurationFile()
+        private IEnumerable<string> FindLanguagesConfigurationFiles()
         {
             var files = Directory.GetFiles(FileDirectory, FileName);
 
@@ -119,8 +118,8 @@ namespace PepperDash.Utilities
                     }
                     catch (Exception ex)
                     {
-                        Debug.Console(0, this, Debug.ErrorLogLevel.Error,
-                            "Error deserializing languages file: {0}\r\nStack Trace: {1}", ex.Message, ex.StackTrace);
+                        Debug.Console(0, this, "Error deserializing languages file: {0}", ex.Message);
+                        Debug.Console(0, this, "Stack Trace: {0}", ex.StackTrace);
                     }
                 }
             }
@@ -230,8 +229,16 @@ namespace PepperDash.Utilities
 
         private void SetLanguageInfo(BasicTriList trilist, I18NUtilityJoinMap joinMap)
         {
+            if (_languagesConfig == null)
+            {
+                Debug.Console(0, this, Debug.ErrorLogLevel.Notice, "No Language configs loaded.");
+                return;
+            }
             Debug.Console(1, this, "Setting supported language information");
             ushort i = 0;
+
+            if (_languagesConfig.LanguageDefinitions.Count == 0) return;
+
             foreach (var lang in _languagesConfig.LanguageDefinitions.Select(language => language.Value))
             {
                 Debug.Console(1, this, "Setting supported language information for locale {0}", lang.LocaleName);
