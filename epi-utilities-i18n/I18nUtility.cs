@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Crestron.SimplSharp;
 using Crestron.SimplSharp.CrestronIO;
 using Crestron.SimplSharpPro;
 using Crestron.SimplSharpPro.DeviceSupport;
@@ -15,7 +16,8 @@ namespace PepperDash.Utilities
 {
     public class I18NUtility : EssentialsBridgeableDevice, ILanguageProvider
     {
-        private const string FileDirectory = @"\user\";
+        private const string FileDirectoryA = @"\user\";
+        private const string FileDirectoryB = @"\user\languages\";
         private const string FileName = @"*languages*.json";
 
         private readonly I18NUtilityConfiguration _config;
@@ -29,6 +31,7 @@ namespace PepperDash.Utilities
         public I18NUtility(string key, string name, I18NUtilityConfiguration config)
             : base(key, name)
         {
+
             _config = config;
 
             CurrentLanguageFeedback = new StringFeedback(() => CurrentLanguageString);
@@ -90,7 +93,7 @@ namespace PepperDash.Utilities
 
         private IEnumerable<string> FindLanguagesConfigurationFiles()
         {
-            var files = Directory.GetFiles(FileDirectory, FileName);
+            var files = Directory.GetFiles(FileDirectoryB, FileName) ?? Directory.GetFiles(FileDirectoryA, FileName);
 
             if (files.Length != 0)
             {
