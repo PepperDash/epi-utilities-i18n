@@ -1,5 +1,3 @@
-
-<?xml version="1.0" encoding="utf-8"?>
 <package >
   <metadata>
     <id>PepperDash.Essentials.Plugin.I18N</id>
@@ -9,11 +7,11 @@
     <owners>pepperdash</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
-    <projectUrl>https://github.com/PepperDash-Engineering/epi-utilities-i18n</projectUrl>
+    <projectUrl>https://github.com/PepperDash/epi-utilities-i18n</projectUrl>
     <copyright>Copyright 2021</copyright>
     <description>This plugin allow for displaying text in different languages as described in configuration files</description>
     <tags>crestron 3series 4series</tags>
-    <repository type="git" url="https://github.com/PepperDash-Engineering/epi-utilities-i18n"/>
+    <repository type="git" url="https://github.com/PepperDash/epi-utilities-i18n"/>
   </metadata>
   <files>
     <file src="**" target="lib\net35"/>
