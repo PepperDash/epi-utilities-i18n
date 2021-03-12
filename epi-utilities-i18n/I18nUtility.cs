@@ -93,7 +93,7 @@ namespace PepperDash.Utilities
 
         private IEnumerable<string> FindLanguagesConfigurationFiles()
         {
-            var files = Directory.GetFiles(FileDirectoryB, FileName) ?? Directory.GetFiles(FileDirectoryA, FileName);
+            var files = Directory.GetFiles(Directory.Exists(FileDirectoryB) ? FileDirectoryB : FileDirectoryA, FileName);
 
             if (files.Length != 0)
             {
