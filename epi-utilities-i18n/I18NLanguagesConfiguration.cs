@@ -6,6 +6,7 @@ namespace PepperDash.Utilities
     public class I18NUtilityConfiguration
     {
         public string DefaultLocale { get; set; }
+        public bool SortAlphabetically { get; set; }
     }
 
 	public class I18NLanguagesConfiguration
@@ -15,6 +16,7 @@ namespace PepperDash.Utilities
 	    public I18NLanguagesConfiguration()
 	    {
 	        LanguageDefinitions = new Dictionary<string, LanguageDefinition>();
+            
 	    }
 	}
 

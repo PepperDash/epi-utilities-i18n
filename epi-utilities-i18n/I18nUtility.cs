@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Crestron.SimplSharp;
 using Crestron.SimplSharp.CrestronIO;
+using Crestron.SimplSharp.Ssh;
 using Crestron.SimplSharpPro;
 using Crestron.SimplSharpPro.DeviceSupport;
 using Newtonsoft.Json;
@@ -35,7 +36,7 @@ namespace PepperDash.Utilities
             _config = config;
 
             CurrentLanguageFeedback = new StringFeedback(() => CurrentLanguageString);
-            CurrentLanguageIntFeedback = new IntFeedback(() => CurrentLanguageIndex);
+            CurrentLanguageIntFeedback = _config.SortAlphabetically ? new IntFeedback(() => CurrentLanguageIndex + 1) : new IntFeedback(() => CurrentLanguageIndex);
 
             CurrentLanguageString = _config.DefaultLocale;
 
@@ -49,6 +50,16 @@ namespace PepperDash.Utilities
                 }
 
                 _languagesConfig = LoadLanguagesConfiguration(fileNames);
+
+                if (_config.SortAlphabetically)
+                {
+                    var sortedDict = new Dictionary<string, LanguageDefinition>();
+                    foreach (var item in _languagesConfig.LanguageDefinitions.OrderBy(i => i.Value.FriendlyName))
+                    {
+                        sortedDict.Add(item.Key, item.Value);
+                    }
+                    _languagesConfig.LanguageDefinitions = sortedDict;
+                }
 
                 if (_languagesConfig != null)
                 {
