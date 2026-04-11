@@ -89,3 +89,59 @@ If you need a different version of PepperDash Core, use the command `nuget insta
 ## License
 
 Provided under [MIT License](LICENSE.md)
+<!-- START Minimum Essentials Framework Versions -->
+### Minimum Essentials Framework Versions
+
+- 1.6.4
+<!-- END Minimum Essentials Framework Versions -->
+<!-- START Supported Types -->
+
+<!-- END Supported Types -->
+<!-- START Join Maps -->
+### Join Maps
+
+#### Digitals
+
+| Join | Type (RW) | Description |
+| --- | --- | --- |
+| 1 | R | Select Current Language & feedback |
+| 11 | R | Language is enabled |
+
+#### Serials
+
+| Join | Type (RW) | Description |
+| --- | --- | --- |
+| 11 | R | Start for list of supported languages |
+| 161 | R | Start for list of supported languages |
+| 401 | R | Start Join for UI Labels |
+| 1501 | R | Start Join for Source Labels |
+| 3001 | R | Start Join for Destination Labels |
+<!-- END Join Maps -->
+<!-- START Interfaces Implemented -->
+### Interfaces Implemented
+
+- ILanguageDefinition
+- ILanguageProvider
+<!-- END Interfaces Implemented -->
+<!-- START Base Classes -->
+### Base Classes
+
+- JoinMapBaseAdvanced
+- EssentialsBridgeableDevice
+<!-- END Base Classes -->
+<!-- START Public Methods -->
+
+<!-- END Public Methods -->
+<!-- START Bool Feedbacks -->
+
+<!-- END Bool Feedbacks -->
+<!-- START Int Feedbacks -->
+### Int Feedbacks
+
+- CurrentLanguageIntFeedback
+<!-- END Int Feedbacks -->
+<!-- START String Feedbacks -->
+### String Feedbacks
+
+- CurrentLanguageFeedback
+<!-- END String Feedbacks -->
